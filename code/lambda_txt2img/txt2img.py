@@ -1,17 +1,19 @@
 import json
 import boto3
+import random
 
 runtime = boto3.client('runtime.sagemaker')
 
 
 def lambda_handler(event, context):
     body = json.loads(event['body'])
-    prompt = body['prompt']
-    endpoint_name = body['endpoint_name']
+    prompt = body.get("prompt", "random test image")
+    endpoint_name = body.get("endpoint_name", "sdxl-1-0-jumpstart-2023-08-04-18-07-23-561")
+    seed = body.get("seed", random.randint(1, 100))
 
     prompt_payload = {
-        "text_prompts": [
-        {
+        "seed": seed,
+        "text_prompts": [{
             "text": prompt,
             "weight": 1
         }
