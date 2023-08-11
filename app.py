@@ -9,10 +9,6 @@ import boto3
 region_name = boto3.Session().region_name
 env={"region": region_name}
 
-#Text to Image model parameters
-TXT2IMG_MODEL_ID = "model-txt2img-stabilityai-stable-diffusion-v2-1-base"
-TXT2IMG_INFERENCE_INSTANCE_TYPE = "ml.g4dn.4xlarge" 
-TXT2IMG_MODEL_TASK_TYPE = "txt2img"
 
 
 app = cdk.App()
