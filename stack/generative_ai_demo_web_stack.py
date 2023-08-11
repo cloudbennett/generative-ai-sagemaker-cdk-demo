@@ -110,4 +110,3 @@ class GenerativeAiDemoWebStack(Stack):
         )
 
         ssm.StringParameter(self, "txt2img_api_endpoint", parameter_name="txt2img_api_endpoint", string_value=txt2img_apigw_endpoint.url)
-        ssm.StringParameter(self, "txt2nlu_api_endpoint", parameter_name="txt2nlu_api_endpoint", string_value=txt2nlu_apigw_endpoint.url)
