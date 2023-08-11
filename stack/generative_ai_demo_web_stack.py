@@ -49,26 +49,7 @@ class GenerativeAiDemoWebStack(Stack):
             handler=lambda_txt2img
         )
         
-        # Defines an AWS Lambda function for NLU & Text Generation service
-        lambda_txt2nlu = _lambda.Function(
-            self, "lambda_txt2nlu",
-            runtime=_lambda.Runtime.PYTHON_3_9,
-            code=_lambda.Code.from_asset("code/lambda_txt2nlu"),
-            handler="txt2nlu.lambda_handler",
-            role=role,
-            timeout=Duration.seconds(180),
-            memory_size=512,
-            vpc_subnets=ec2.SubnetSelection(
-                subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
-            ),
-            vpc=vpc            
-        )
-        
-        # Defines an Amazon API Gateway endpoint for NLU & Text Generation service
-        txt2nlu_apigw_endpoint = apigw.LambdaRestApi(
-            self, "txt2nlu_apigw_endpoint",
-            handler=lambda_txt2nlu
-        )        
+            
         
         # Create ECS cluster
         cluster = ecs.Cluster(self, "WebDemoCluster", vpc=vpc)
