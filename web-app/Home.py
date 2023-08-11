@@ -8,6 +8,8 @@ import numpy as np
 import time
 import base64
 from io import BytesIO
+from configs import *
+
 
 from PIL import Image
 image = Image.open("./sagemaker.png")
@@ -27,11 +29,8 @@ StylePreset = st.selectbox(
     'Select a style preset from the list',
     ['cinematic','anime','comic-book','digital-art','fantasy-art','modeling-compound','neon-punk','origami','3d-model','analog-film']
     )
-with st.spinner("Retrieving configurations..."):
-
 
 with st.spinner("Retrieving configurations..."):
-    
 
     all_configs_loaded = False
 
