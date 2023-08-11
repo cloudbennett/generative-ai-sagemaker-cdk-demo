@@ -29,8 +29,20 @@ StylePreset = st.selectbox(
     )
 with st.spinner("Retrieving configurations..."):
 
+
+with st.spinner("Retrieving configurations..."):
+    
+
+    all_configs_loaded = False
+
+    while not all_configs_loaded:
+        try:
+            api_endpoint = get_parameter(key_txt2img_api_endpoint)
+            all_configs_loaded = True
+        except:
+            time.sleep(5)
         
-        api_endpoint = " https://6d8u4vdrz4.execute-api.us-east-1.amazonaws.com/prod"
+        #api_endpoint = " https://6d8u4vdrz4.execute-api.us-east-1.amazonaws.com/prod"
         endpoint_name = "sdxl-1-0-jumpstart-2023-08-04-18-07-23-561"
 
 
