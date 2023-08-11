@@ -15,7 +15,7 @@ st.image(image, width=200)
 
 version = os.environ.get("WEB_VERSION", "0.1")
 
-st.header(f"Generative AI Hackathon Demo (Version {version})")
+st.header(f"Generative AI Hackathon Demo (Version)")
 st.markdown("Generative AI demo using Stable DiffusionXL 1.0")
 
 text_prompts = st.text_area("Input Image description:")
