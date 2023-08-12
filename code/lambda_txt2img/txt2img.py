@@ -9,7 +9,9 @@ def lambda_handler(event, context):
     body = json.loads(event['body'])
     prompt = body.get("prompt", {"text": "random test image"})
     endpoint_name = body.get("endpoint_name", "sdxl-1-0-jumpstart-2023-08-04-18-07-23-561")
-    seed = body.get("seed", random.randint(1, 100))
+    seed = random.randint(1, 100)
+    if body.get("seed"):
+        seed = body.get("seed")
     steps = body.get("steps", 50)
     width = body.get("width", 1024)
     height = body.get("height", 1024)
