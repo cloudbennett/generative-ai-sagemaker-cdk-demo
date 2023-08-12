@@ -17,17 +17,17 @@ st.image(image, width=200)
 
 version = os.environ.get("WEB_VERSION", "0.1")
 
-st.header(f"Generative AI Hackathon Demo (Version)")
-st.markdown("Generative AI demo using Stable DiffusionXL 1.0")
+st.header("Movie Poster Generation")
+st.markdown("Powered by Amazon Sagemaker using Stable DiffusionXL 1.0")
 
-text_prompts = st.text_area("Input Image description:")
-negative_prompt = st.text_area("Input negative prompt description")
-seed_value=st.text_input("Enter seed value:")
+text_prompts = st.text_area("Describe your movie poster:","""movie poster with dwayne johnson with city skyline in chaos futuristic vehicle zooms  """)
+negative_prompt = st.text_area("Add parameter to exclude from generated poster:","""low resolution""")
+seed_value=st.text_input("Enter seed value(Numeric value to initialize picture generation):","""1""")
 
 
 StylePreset = st.selectbox(
     'Select a style preset from the list',
-    ['cinematic','anime','comic-book','digital-art','fantasy-art','modeling-compound','neon-punk','origami','3d-model','analog-film']
+    ['digital-art','cinematic','anime','comic-book','fantasy-art','modeling-compound','neon-punk','origami','3d-model','analog-film']
     )
 
 with st.spinner("Retrieving configurations..."):
@@ -41,7 +41,7 @@ with st.spinner("Retrieving configurations..."):
         except:
             time.sleep(5)
         
-        #api_endpoint = " https://6d8u4vdrz4.execute-api.us-east-1.amazonaws.com/prod"
+        #api_endpoint = "https://ceiapp4n72.execute-api.us-east-1.amazonaws.com/prod"
         endpoint_name = "sdxl-1-0-jumpstart-2023-08-04-18-07-23-561"
 
 
