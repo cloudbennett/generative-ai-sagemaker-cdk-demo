@@ -1,43 +1,14 @@
 
-# Deploy generative AI models from Amazon SageMaker JumpStart using the AWS CDK
+# Generative AI Hackathon - Movie Poster Generator
 
-The seeds of a machine learning (ML) paradigm shift have existed for decades, but with the ready availability of virtually infinite compute capacity, a massive proliferation of data, and the rapid advancement of ML technologies, customers across industries are rapidly adopting and using ML technologies to transform their businesses. 
+Bennett Borofka - bborofka@
+Carl Luo - carlluo@
+John Brunot - jmbrunot@
+Parvinder Singh - prvinder@
 
-Just recently, generative AI applications have captured everyone’s attention and imagination. We are truly at an exciting inflection point in the widespread adoption of ML, and we believe every customer experience and application will be reinvented with generative AI. 
+This hackathon demo was developed using the AWS sample for [generative-ai-sagemaker-cdk-demo](https://github.com/aws-samples/generative-ai-sagemaker-cdk-demo).
 
-Generative AI is a type of AI that can create new content and ideas, including conversations, stories, images, videos, and music. Like all AI, generative AI is powered by ML models—very large models that are pre-trained on vast corpora of data and commonly referred to as foundation models (FMs).  
-
-The size and general-purpose nature of FMs make them different from traditional ML models, which typically perform specific tasks, like analyzing text for sentiment, classifying images, and forecasting trends.
-
-![foundation-models](./images/foundation-models.png)
-
-With tradition ML models, in order to achieve each specific task, you need to gather labeled data, train a model, and deploy that model. With foundation models, instead of gathering labeled data for each model and training multiple models, you can use the same pre-trained FM to adapt various tasks. You can also customize FMs to perform domain-specific functions that are differentiating to your businesses, using only a small fraction of the data and compute required to train a model from scratch. 
-
- 
-
-Generative AI has the potential to disrupt many industries by revolutionizing the way content is created and consumed. Original content production, code generation, customer service enhancement, and document summarization are typical use cases of generative AI.
-
- 
-
-[Amazon SageMaker JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html) provides pre-trained, open-source models for a wide range of problem types to help you get started with ML. You can incrementally train and tune these models before deployment. JumpStart also provides solution templates that set up infrastructure for common use cases, and executable example notebooks for ML with [Amazon SageMaker](https://aws.amazon.com/sagemaker/).
-
- 
-
-With over 600 pre-trained models available and growing every day, JumpStart enables developers to quickly and easily incorporate cutting-edge ML techniques into their production workflows. You can access the pre-trained models, solution templates, and examples through the JumpStart landing page in [Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/studio.html). You can also access JumpStart models using the SageMaker Python SDK. For information about how to use JumpStart models programmatically, see [Use SageMaker JumpStart Algorithms with Pretrained Models](https://sagemaker.readthedocs.io/en/stable/overview.html#use-sagemaker-jumpstart-algorithms-with-pretrained-models).
-
- 
-
-In April 2023, AWS unveiled [Amazon Bedrock](https://aws.amazon.com/bedrock/), which provides a way to build generative AI-powered apps via pre-trained models from startups including [AI21 Labs](https://www.ai21.com/), [Anthropic](https://techcrunch.com/2023/02/27/anthropic-begins-supplying-its-text-generating-ai-models-to-startups/), and [Stability AI](https://techcrunch.com/2022/10/17/stability-ai-the-startup-behind-stable-diffusion-raises-101m/). Amazon Bedrock also offers access to Titan foundation models, a family of models trained in-house by AWS. With the serverless experience of Amazon Bedrock, you can easily find the right model for your needs, get started quickly, privately customize FMs with your own data, and easily integrate and deploy them into your applications using the AWS tools and capabilities you’re familiar with (including integrations with SageMaker ML features like [Amazon SageMaker Experiments](https://docs.aws.amazon.com/sagemaker/latest/dg/experiments.html) to test different models and [Amazon SageMaker Pipelines](https://aws.amazon.com/sagemaker/pipelines/) to manage your FMs at scale) without having to manage any infrastructure.
-
- 
-
-In this post, we show how to deploy image and text generative AI models from JumpStart using the [AWS Cloud Development Kit](https://aws.amazon.com/cdk/) (AWS CDK). The AWS CDK is an open-source software development framework to define your cloud application resources using familiar programming languages like Python.
-
- 
-
-We use the Stable Diffusion model for image generation and the FLAN-T5-XL model for [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural-language_understanding) and text generation from [Hugging Face](https://huggingface.co/) in JumpStart.
-
-
+![sample](image.png)
 
 ## Solution overview
 
@@ -110,7 +81,7 @@ docker --version
 On your local machine, clone the AWS CDK application with the following command:
 
 ```
-git clone https://github.com/aws-samples/generative-ai-sagemaker-cdk-demo.git
+git clone https://github.com/cloudbennett/generative-ai-sagemaker-cdk-demo.git
 ```
 
 Navigate to the project folder:
@@ -118,49 +89,6 @@ Navigate to the project folder:
 ```
 cd generative-ai-sagemaker-cdk-demo
 ```
-
-Before we deploy the application, let's review the directory structure:
-
-```shell
-.
-├── LICENSE
-├── README.md
-├── app.py
-├── cdk.json
-├── code
-│   ├── lambda_txt2img
-│   │   └── txt2img.py
-│   └── lambda_txt2nlu
-│       └── txt2nlu.py
-├── construct
-│   └── sagemaker_endpoint_construct.py
-├── images
-│   ├── architecture.png
-│   ├── ...
-├── requirements-dev.txt
-├── requirements.txt
-├── source.bat
-├── stack
-│   ├── __init__.py
-│   ├── generative_ai_demo_web_stack.py
-│   ├── generative_ai_txt2img_sagemaker_stack.py
-│   ├── generative_ai_txt2nlu_sagemaker_stack.py
-│   └── generative_ai_vpc_network_stack.py
-├── tests
-│   ├── __init__.py
-│   └── ...
-└── web-app
-    ├── Dockerfile
-    ├── Home.py
-    ├── configs.py
-    ├── img
-    │   └── sagemaker.png
-    ├── pages
-    │   ├── 2_Image_Generation.py
-    │   └── 3_Text_Generation.py
-    └── requirements.txt
-```
-
 
 
 The `stack` folder contains the code for each stack in the AWS CDK application. The `code` folder contains the code for the Amazon Lambda functions. The repository also contains the web application located  under the folder `web-app`. 
