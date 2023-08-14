@@ -1,4 +1,3 @@
-
 # Generative AI Hackathon - Movie Poster Generator (Media & Entertainment)
 
 - Bennett Borofka - bborofka@
@@ -163,8 +162,6 @@ You can list stacks in your CDK application with the following command:
 ```bash
 $ cdk list
 
-GenerativeAiTxt2imgSagemakerStack
-GenerativeAiTxt2nluSagemakerStack
 GenerativeAiVpcNetworkStack
 GenerativeAiDemoWebStack
 ```
