@@ -1,10 +1,10 @@
 
 # Generative AI Hackathon - Movie Poster Generator
 
-Bennett Borofka - bborofka@
-Carl Luo - carlluo@
-John Brunot - jmbrunot@
-Parvinder Singh - prvinder@
+- Bennett Borofka - bborofka@
+- Carl Luo - carlluo@
+- John Brunot - jmbrunot@
+- Parvinder Singh - prvinder@
 
 This hackathon demo was developed using the AWS sample for [generative-ai-sagemaker-cdk-demo](https://github.com/aws-samples/generative-ai-sagemaker-cdk-demo).
 
@@ -14,7 +14,7 @@ This hackathon demo was developed using the AWS sample for [generative-ai-sagema
 
 The web application is built on [Streamlit](https://streamlit.io/), an open-source Python library that makes it easy to create and share beautiful, custom web apps for ML and data science. We host the web application using [Amazon Elastic Container Service](https://aws.amazon.com/ecs) (Amazon ECS) with [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html) and it is accessed via an Application Load Balancer. Fargate is a technology that you can use with Amazon ECS to run [containers](https://aws.amazon.com/what-are-containers) without having to manage servers or clusters or virtual machines. The generative AI model endpoints are launched from JumpStart images in [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/) (Amazon ECR). Model data is stored on [Amazon Simple Storage Service](https://aws.amazon.com/s3/) (Amazon S3) in the JumpStart account. The web application interacts with the models via [Amazon API Gateway](https://aws.amazon.com/api-gateway) and [AWS Lambda](http://aws.amazon.com/lambda) functions as shown in the following diagram.
 
-![architecture](./images/architecture.png)
+![architecture](architecture.png)
 
 API Gateway provides the web application and other clients a standard RESTful interface, while shielding the Lambda functions that interface with the model. This simplifies the client application code that consumes the models. The API Gateway endpoints are publicly accessible in this example, allowing for the possibility to extend this architecture to implement different [API access controls](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) and integrate with other applications.
 
