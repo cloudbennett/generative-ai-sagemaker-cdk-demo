@@ -1,5 +1,5 @@
 
-# Generative AI Hackathon - Movie Poster Generator
+# Generative AI Hackathon - Movie Poster Generator (Media & Entertainment)
 
 - Bennett Borofka - bborofka@
 - Carl Luo - carlluo@
@@ -7,6 +7,15 @@
 - Parvinder Singh - prvinder@
 
 This hackathon demo was developed using the AWS sample for [generative-ai-sagemaker-cdk-demo](https://github.com/aws-samples/generative-ai-sagemaker-cdk-demo).
+
+To generate a movie poster using this demo, you will need to load the website and input your prompt to the following fields:
+- **Describe your movie poster**: use a plain, clear description of the kind of poster you want, the actors, type of scene, etc.
+- **Add parameter to exclude from generated poster**: add any keywords or phrases of what you **don't** want to appear in the poster.
+- **Enter seed value** (default: 1): a randomness value, can be changed to increase the variation of output if creating multiple posters.
+- **Select a style preset from the list**: select a theme to give the poster a specific look-and-feel.
+
+Click **Generate** and the poster will generate within about 30 seconds.
+
 
 ![sample](image.png)
 
