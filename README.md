@@ -207,16 +207,6 @@ After analyzing the stack, the AWS CDK will display the resource list in the sta
 Note down the `WebApplicationServiceURL` from the output as you will use it later. You can also retrieve it later in the CloudFormation console, under the `GenerativeAiDemoWebStack` stack outputs.
 
 
-
-Now, launch the image generation AI model endpoint stack:
-
-```
-cdk deploy GenerativeAiTxt2imgSagemakerStack
-```
-
-This step takes around 8 minutes. The image generation model endpoint is deployed, we can now use it.
-
-
 ## Clean up
 
 To avoid unnecessary cost, clean up all the infrastructure created with the following command on your workstation:
