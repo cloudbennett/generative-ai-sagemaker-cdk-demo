@@ -57,6 +57,15 @@ You must have the following prerequisites:
 
 The estimated cost to complete this post is $50, assuming you leave the resources running for 8 hours. Make sure you delete the resources you create in this post to avoid ongoing charges.
 
+## Create a SageMaker domain and launch Studio
+
+Create a new Amazon SageMaker domain using Quick setup.
+
+Once completed, launch Studio. Once your are in the studio, go to Home and click **JumpStart** under **Prebuilt and automated solutions**.
+
+Browse to **Stable Diffusion XL 1.0** and click View notebook. Then click **Import notebook** in the top right.
+
+Go through each section of the notebook, clicking the play button in the top tool bar to step through.
 
 
 ## Install the AWS CLI and AWS CDK on your local machine
