@@ -65,7 +65,9 @@ Once completed, launch Studio. Once your are in the studio, go to Home and click
 
 Browse to **Stable Diffusion XL 1.0** and click View notebook. Then click **Import notebook** in the top right.
 
-Go through each section of the notebook, clicking the play button in the top tool bar to step through.
+Go through each section of the notebook, clicking the play button in the top tool bar to step through. Stop at the section right before **A: Text to image**. This will create an endpoint you will need to reference below.
+
+Navigate to Endpoints in the left side panel, copy the endpoint **Name**.
 
 
 ## Install the AWS CLI and AWS CDK on your local machine
@@ -114,6 +116,8 @@ The `stack` folder contains the code for each stack in the AWS CDK application. 
 The `cdk.json` file tells the AWS CDK Toolkit how to run your application.
 
 This application was tested in the `us-east-1` Region but it should work in any Region that has the required services and inference instance type `ml.g4dn.4xlarge` specified in [app.py](app.py). 
+
+Edit the `web-app` > `Home.py` file. Change the `endpoint_name` variable to the Name you copied from SageMaker above.
 
 
 
