@@ -51,6 +51,7 @@ You must have the following prerequisites:
 - node.js 14.x or later
 - The [AWS CDK v2](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)
 - Docker v20.10 or later
+- AWS Marketplace [Stable Diffusion XL 1.0](https://aws.amazon.com/marketplace/pp/prodview-pe7wqwehghdtm?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) subscription in your AWS account
 
  You can deploy the infrastructure in this tutorial from your local computer or you can use [AWS Cloud9](https://aws.amazon.com/cloud9/) as your deployment workstation. AWS Cloud9 comes pre-loaded with AWS CLI, AWS CDK and Docker. If you opt for AWS Cloud9, [create the environment](https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-create-environment.html) from the [AWS console](https://console.aws.amazon.com/cloud9).
 
